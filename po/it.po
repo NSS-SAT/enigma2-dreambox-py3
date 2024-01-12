@@ -4025,9 +4025,9 @@ msgstr "RGB"
 msgid "GUI Settings"
 msgstr "Impostazioni"
 
-#, fuzzy
+
 msgid "GUI Skin"
-msgstr "Impostazioni"
+msgstr "Impostazioni Skin"
 
 msgid ""
 "GUI needs a restart to apply a new language\n"
@@ -10314,7 +10314,7 @@ msgstr "Definito dall'utente"
 msgid "User defined transponder"
 msgstr "Transponder definito dall'utente"
 
-msgid "User interface"
+msgid "Interfaccia utente"
 msgstr "Interfaccia utente"
 
 #, python-format
