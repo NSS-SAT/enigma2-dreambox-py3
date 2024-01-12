@@ -42,7 +42,6 @@ class About(Screen):
 		AboutText += _("Forum: https://www.nonsolosat.net") + "\n"
 		AboutText += _("OE Version: ") + about.getOEVersionString() + "\n"
 		AboutText += _("Build date: ") + about.getBuildDateString() + "\n"
-		ImageVersion = _("Last update: ") + about.getImageVersionString()
 		self["ImageVersion"] = StaticText(ImageVersion)
 		AboutText += ImageVersion + "\n"
 
