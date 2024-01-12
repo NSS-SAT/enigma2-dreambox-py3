@@ -39,7 +39,7 @@
 			</menu>
 			<menu weight="5" level="0" text="System" entryID="system_selection">
 				<id val="system"/>
-				<menu weight="0" level="0" text="" entryID="check_update">
+				<menu weight="0" level="0" text="Check update Settings" entryID="check_update">
 					<id val="update"/>
 					<item level="0" entryID="check_update"><setup id="checkupdate"/></item>
 				</menu>
@@ -65,7 +65,11 @@
 						<item entryID="lcd_setup" level="1" text="LCD Setup" weight="10" requires="Display"><setup id="FrontDisplay" /></item>
 						<item entryID="led_setup" level="1" text="LED Setup" weight="15"><setup id="LedDisplay" /></item>
 					</menu>
-					
+				</menu>
+				<menu entryID="usage_setup" level="0" text="Log Manager" weight="2">
+					<id val="logs_menu" />
+					<item entryID="logs_setup" level="2" text="Settings"><setup id="Logs" /></item>
+				</menu>
 				<!-- Menu / Setup / EPG -->
 				<menu entryID="epg_menu" level="0" text="EPG" weight="15">
 					<id val="epg" />
@@ -139,7 +143,7 @@ self.session.openWithCallback(msgClosed, EpgDeleteMsg)
 
 			<menu weight="10" text="SoftCam / CI" entryID="cam_setup">
 				<id val="cam"/>
-				<item weight="10" level="0" text="Common Interface" entryID="ci_setup" requires="CommonInterface"><screen module="Ci" screen="CiSelection"/></item>
+				<item weight="10" level="0" text="Common Interface" entryID="ci_setup" requires="CommonInterface"><screen module="Ci" screen="CiSelection"/></item
 			</menu>
 
 			<item weight="15" level="0" text="Parental control" entryID="parental_setup"><screen module="ParentalControlSetup" screen="ParentalControlSetup"/></item>
