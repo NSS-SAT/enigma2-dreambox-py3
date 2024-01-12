@@ -144,7 +144,6 @@ self.session.openWithCallback(msgClosed, EpgDeleteMsg)
 			<menu weight="10" text="SoftCam / CI" entryID="cam_setup">
 				<id val="cam"/>
 				<item weight="10" level="0" text="Common Interface" entryID="ci_setup" requires="CommonInterface"><screen module="Ci" screen="CiSelection"/></item>
-				<item weight="110" level="2" text="Stream Relay Settings" entryID="streamrelay_settings"><screen module="SoftcamSetup" screen="StreamRelaySetup" /></item>
 			</menu>
 
 			<item weight="15" level="0" text="Parental control" entryID="parental_setup"><screen module="ParentalControlSetup" screen="ParentalControlSetup"/></item>
