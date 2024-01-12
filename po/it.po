@@ -4026,7 +4026,7 @@ msgid "GUI Settings"
 msgstr "Impostazioni"
 
 
-msgid "GUI Skin"
+msgid "Impostazioni Skin"
 msgstr "Impostazioni Skin"
 
 msgid ""
