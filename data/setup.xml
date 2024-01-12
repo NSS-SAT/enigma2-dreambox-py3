@@ -281,6 +281,9 @@
 	<setup key="FlashExpander" title="Flash Expander">
 		<item level="0" text="Target location" description="Choose the target location for the expanded '/usr' directory.">config.flashExpander.location</item>
 	</setup>
+	<setup key="GPTSlotManager" title="Slot Manager">
+		<item level="0" text="Target location" description="Choose the target device for the slots.">self.GPTSlotManagerLocation</item>
+	</setup>
 	<setup key="harddisk" title="Hard disk setup" >
 		<item level="0" text="Hard disk standby after" description="Configure the hard disk drive to go to standby after the specified idle time.">config.usage.hdd_standby</item>
 	</setup>
@@ -298,6 +301,7 @@
 		<item level="2" text="Show crash info on screen and write crash log for x times" description="If 'never', will write crash log despite that for the first crash." requires="config.crash.bsodpython">config.crash.bsodhide</item>
 		<item level="2" text="Restart GUI after x crashes" description="If 'never', will force restart despite that after 100 crashes." requires="config.crash.bsodpython">config.crash.bsodmax</item>
 		<item level="2" text="Enable debug log *" description="Allows you to enable the debug log. They contain very detailed information of everything the system does.">config.crash.enabledebug</item>
+		<item level="2" text="Include MultiBoot data *" description="Enable this option to add MultiBoot information detected during system boot to the debug log file.">config.crash.debugMultiBoot</item>
 		<item level="2" text="Include keyboard data" description="Enable this option to add keyboard key map data to the debug log file.">config.crash.debugKeyboards</item>
 		<item level="2" text="Include remote control data" description="Enable this option to add remote control data to the debug log file.">config.crash.debugRemoteControls</item>
 		<item level="2" text="Include screen load data" description="Enable this option to add screen names and resolution data to the debug log file.">config.crash.debugScreens</item>
@@ -345,6 +349,11 @@
 		<item text="Teletext alpha">config.osd.alpha_teletext</item>
 		<item text="Brightness">config.osd.bright</item>
 		<item text="Contrast">config.osd.contrast</item>
+	</setup>
+	<setup key="OSD3D" title="OSD 3D Settings" showOpenWebif="1">
+		<item level="0" text="3D Mode" description="This option lets you choose the 3D mode.">config.osd.threeDmode</item>
+		<item level="0" text="Depth" description="This option lets you adjust the 3D depth.">config.osd.threeDznorm</item>
+		<item level="0" text="Show in Extension Menu" description="This option lets you show the option in the Extension Menu screen.">config.osd.show3dextensions</item>
 	</setup>
 	<setup key="FrontDisplay" title="Display Setup" requires="FrontpanelDisplay">
 		<item level="0" text="Use separate picon pack for front panel display" description="Use piconlcd directory for picons on color LCD">config.lcd.picon_pack</item>
