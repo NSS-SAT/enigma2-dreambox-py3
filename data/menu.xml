@@ -37,12 +37,6 @@
 				<item text="Manual scan" entryID="manual_scan" conditional="nimmanager.somethingConnected()"><screen module="ScanSetup"/></item>
 				<item text="Fallback remote receiver setup" entryID="fallbacktuner_settings"><screen module="SetupFallbacktuner"/></item>
 			</menu>
-			<menu weight="5" level="0" text="System" entryID="system_selection">
-				<id val="system"/>
-				<menu weight="0" level="0" text="Check update Settings" entryID="check_update">
-					<id val="update"/>
-					<item level="0" entryID="check_update"><setup id="checkupdate"/></item>
-				</menu>
 				<menu level="0" text="Audio &amp; Video" entryID="video_selection">
 					<id val="video"/>
 					<item level="0" entryID="av_setup"><setup id="avsetup"/></item>
