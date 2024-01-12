@@ -4018,13 +4018,11 @@ msgstr "Ulteriori opzioni"
 msgid "G"
 msgstr "G"
 
-#, fuzzy
 msgid "GB"
 msgstr "RGB"
 
 msgid "GUI Settings"
 msgstr "Impostazioni"
-
 
 msgid "Impostazioni Skin"
 msgstr "Impostazioni Skin"
