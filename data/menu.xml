@@ -65,8 +65,7 @@
 						<item entryID="lcd_setup" level="1" text="LCD Setup" weight="10" requires="Display"><setup id="FrontDisplay" /></item>
 						<item entryID="led_setup" level="1" text="LED Setup" weight="15"><setup id="LedDisplay" /></item>
 					</menu>
-				</menu>
-				</menu>
+					
 				<!-- Menu / Setup / EPG -->
 				<menu entryID="epg_menu" level="0" text="EPG" weight="15">
 					<id val="epg" />
