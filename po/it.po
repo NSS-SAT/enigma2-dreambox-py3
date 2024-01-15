@@ -4025,9 +4025,9 @@ msgstr "RGB"
 msgid "GUI Settings"
 msgstr "Impostazioni"
 
-
-msgid "Impostazioni Skin"
-msgstr "Impostazioni Skin"
+#, fuzzy
+msgid "GUI Skin"
+msgstr "Impostazioni"
 
 msgid ""
 "GUI needs a restart to apply a new language\n"
@@ -4759,12 +4759,12 @@ msgstr "Israele"
 msgid ""
 "It seems you did not see all the eight arrow heads. This means your TV has overscan enabled, and is not configured properly.\n"
 "\n"
-"Please refer to your TV's manual to find how you can disable overscan on your TV. Look for terms like 'Just fit', 'Full width', etc. If you can't find it, ask other users at http://forums.openpli.org.\n"
+"Please refer to your TV's manual to find how you can disable overscan on your TV. Look for terms like 'Just fit', 'Full width', etc. If you can't find it, ask other users at http://nonsolosat.net.\n"
 "\n"
 msgstr ""
 "Apparentemente non sono visibili tutte le punte delle 8 frecce. Quindi il televisore ha l'overscan abilitato e non è regolato correttamente.\n"
 "\n"
-"Consultare il manuale del televisore per conoscere come disabilitare l'overscan. Cercare termini come 'Adatta', 'Larghezza intera', ecc. Se necessario è possibile chiedere aiuto sul sito http://forums.openpli.org.\n"
+"Consultare il manuale del televisore per conoscere come disabilitare l'overscan. Cercare termini come 'Adatta', 'Larghezza intera', ecc. Se necessario è possibile chiedere aiuto sul sito http://nonsolosat.net.\n"
 "\n"
 
 msgid "Italian"
@@ -10314,7 +10314,7 @@ msgstr "Definito dall'utente"
 msgid "User defined transponder"
 msgstr "Transponder definito dall'utente"
 
-msgid "Interfaccia utente"
+msgid "User interface"
 msgstr "Interfaccia utente"
 
 #, python-format

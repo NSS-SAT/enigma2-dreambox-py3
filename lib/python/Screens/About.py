@@ -39,7 +39,11 @@ class About(Screen):
 		cpu = about.getCPUInfoString()
 		AboutText += _("CPU: ") + cpu + "\n"
 		AboutText += _("Image: ") + about.getImageTypeString() + "\n"
-		AboutText += _("Forum: https://www.nonsolosat.net") + "\n"
+		AboutText += _("OE Version: ") + about.getOEVersionString() + "\n"
+		AboutText += _("Build date: ") + about.getBuildDateString() + "\n"
+		ImageVersion = _("Last update: ") + about.getImageVersionString()
+		self["ImageVersion"] = StaticText(ImageVersion)
+		AboutText += ImageVersion + "\n"
 
 		# [WanWizard] Removed until we find a reliable way to determine the installation date
 		# AboutText += _("Installed: ") + about.getFlashDateString() + "\n"
@@ -466,8 +470,8 @@ class Troubleshoot(Screen):
 		return [x for x in sorted(glob.glob("/mnt/hdd/*.log"), key=lambda x: os.path.isfile(x) and os.path.getmtime(x))] + (os.path.isfile(home_root) and [home_root] or []) + (os.path.isfile(tmp) and [tmp] or [])
 
 	def updateOptions(self):
-		self.titles = ["dmesg", "ifconfig", "df", "top", "ps", "messages"]
-		self.commands = ["dmesg", "ifconfig", "df -h", "top -n 1", "ps -l", "cat /var/volatile/log/messages"]
+		self.titles = ["dmesg", "ifconfig", "df", "top", "ps", "messages", "enigma info"]
+		self.commands = ["dmesg", "ifconfig", "df -h", "top -n 1", "ps -l", "cat /var/volatile/log/messages", "cat /usr/lib/enigma.info"]
 		install_log = "/home/root/autoinstall.log"
 		if os.path.isfile(install_log):
 				self.titles.append("%s" % install_log)
