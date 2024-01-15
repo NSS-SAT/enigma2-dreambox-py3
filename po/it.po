@@ -8491,7 +8491,7 @@ msgstr "Selezionare un'attività"
 msgid "SkinSelector: Restart GUI"
 msgstr ""
 
-msgid "Skins"
+msgid "Impostazioni skin"
 msgstr "Impostazioni skin"
 
 msgid "Skip empty services"
