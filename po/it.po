@@ -7129,8 +7129,8 @@ msgstr "Ripristinare le impostazioni del miglioramento immagine ai valori preced
 msgid "Resolution"
 msgstr "Risoluzione"
 
-msgid "Restart"
-msgstr "Riavvio del ricevitore"
+msgid "Riavvio ricevitore"
+msgstr "Riavvio ricevitore"
 
 msgid "Restart GUI now?"
 msgstr "Riavviare l'interfaccia utente?"
