@@ -13,11 +13,51 @@
 	<code> .. code .. </code>
 		"exec"s code
 -->
-		<menu weight="7" level="0" text="Timers" entryID="timer_menu">
+        
+
+       
+        <!-- Menu /  by lululla-->
+        <menu weight="0" level="1" text="Menu NSS" entryID="NSSAT">
+            <id val="NSSAT" />  
+
+            <item weight="0" level="0" text="NSS Addon Manager" entryID="NSSAT">  
+        <code>
+from Plugins.Extensions.nssaddon.plugin import *
+self.session.open(HomeNss)
+</code>
+            </item>  
+
+            <!--
+ 			<item weight="5" level="0" text="Timers" entryID="timer_edit"><screen module="TimerEdit" screen="TimerEditList" /></item>
+			<item weight="8" level="0" text="CronTimers" entryID="crontimer_edit"><screen module="CronTimer" screen="CronTimers" /></item>
+            -->
+
+            <item weight="10" level="0" text="NSS Softcam Manager" entryID="NSSAT">  
+        <code>
+from Plugins.Extensions.nssaddon.CamEx import *
+self.session.open(NSSCamsManager)
+</code>
+            </item>  
+
+
+            <item weight="14" level="0" text="NSS oZeta Skin Setup" entryID="NSSAT"> 
+			<item level="20" text="About" entryID="about_screen"><screen module="About"/></item>
+            
+        <code>
+from Plugins.Extensions.oZetaNSS.plugin import *
+self.session.open(oZetaNSS)
+</code>
+            </item>
+
+        </menu>
+        <!-- Menu /  by lululla-->   
+        
+ 		<menu weight="5" level="0" text="Timer" entryID="timer_menu">
 			<id val="timermenu" />
-			<item weight="0" level="0" text="Timers" entryID="timer_edit"><screen module="TimerEdit" screen="TimerEditList" /></item>
-			<item weight="10" level="0" text="CronTimers" entryID="crontimer_edit"><screen module="CronTimer" screen="CronTimers" /></item>
-		</menu>
+			<item weight="0" level="0" text="Timer" entryID="timer_edit"><screen module="TimerEdit" screen="TimerEditList" /></item>
+			<item weight="10" level="0" text="CronTimer" entryID="crontimer_edit"><screen module="CronTimer" screen="CronTimers" /></item>
+		</menu>  
+        
 		<item level="1" text="VCR scart" entryID="scart_switch" conditional="config.usage.show_vcr_scart.value" requires="ScartSwitch"><code>self.session.scart.VCRSbChanged(3)</code></item>
 
 		<menu level="0" text="Information" entryID="info_screen">
@@ -38,15 +78,18 @@
 				<item text="Fallback remote receiver setup" entryID="fallbacktuner_settings"><screen module="SetupFallbacktuner"/></item>
 			</menu>
 			<menu weight="5" level="0" text="System" entryID="system_selection">
-				<id val="system"/>
-				<menu weight="0" level="0" text="Check update Settings" entryID="check_update">
+                <id val="system"/>
+
+                <!--
+ 				<menu weight="0" level="0" text="Check update Settings" entryID="check_update">
 					<id val="update"/>
 					<item level="0" entryID="check_update"><setup id="checkupdate"/></item>
 				</menu>
+                -->
 				<menu level="0" text="Audio &amp; Video" entryID="video_selection">
 					<id val="video"/>
 					<item level="0" entryID="av_setup"><setup id="avsetup"/></item>
-					<item entryID="subtitle_setup" level="2" text="Subtitle Setup" weight="20"><setup id="subtitlesetup" /></item>
+					<item entryID="subtitle_setup" level="2" text="Impostazioni Sottotitoli" weight="20"><setup id="subtitlesetup" /></item>
 					<item level="0" entryID="autolanguage_setup" text="Auto Language Setup"><setup id="autolanguagesetup"/></item>
 					<item entryID="osdsetup" level="1" text="OSD Position Settings" weight="50" requires="OsdMenu"><screen module="UserInterfacePositioner" screen="UserInterfacePositioner2" /></item>
 					<item entryID="setup_osd3d" level="2" text="OSD 3D Settings" weight="60" requires="CanChange3DOsd"><setup setupKey="OSD3D" /></item>
@@ -56,9 +99,9 @@
 					<item level="0" text="Language" entryID="language_setup"><screen module="LanguageSelection"/></item>
 					<!-- Menu / Setup / Time -->
 					<item entryID="time_setup" level="0" text="Time" weight="50"><screen module="Time" screen="Time" /></item>
-					<item level="0" entryID="user_interface" text="User Interface" ><setup id="userinterface"/></item>
+					<item level="0" entryID="user_interface" text="Impostazione Utente" ><setup id="userinterface"/></item>
 					<item level="0" entryID="usage_setup"><setup id="usage"/></item>
-					<item level="0" text="Skin" entryID="primary_skin_selector"><screen module="SkinSelector" screen="SkinSelector"/></item>
+					<item level="0" text="Impostazione Skin" entryID="primary_skin_selector"><screen module="SkinSelector" screen="SkinSelector"/></item>
 					<menu entryID="display_selection" level="0" text="Front Panel Display">
 						<id val="lcd" />
 						<item entryID="display_skin_selector" level="0" text="Skin Setup" weight="5" requires="Display"><screen module="SkinSelector" screen="LcdSkinSelector" /></item>
@@ -86,7 +129,7 @@ def msgClosed(ret):
 		epgcache = eEPGCache.getInstance()
 		epgcache.save()
 self.session.openWithCallback(msgClosed, EpgSaveMsg)
-							</code>
+</code>
 						</item>
 						<item entryID="loadepgcache" level="0" text="Load EPG Cache">
 							<code>
@@ -97,10 +140,10 @@ def msgClosed(ret):
 		epgcache = eEPGCache.getInstance()
 		epgcache.load()
 self.session.openWithCallback(msgClosed, EpgLoadMsg)
-							</code>
+</code>
 						</item>
 						<item entryID="deleteepgcache" level="0" text="Delete EPG Cache">
-							<code>
+                            <code>
 from Components.EpgLoadSave import EpgDeleteMsg
 def msgClosed(ret):
 	if ret:
@@ -112,7 +155,7 @@ def msgClosed(ret):
 		epgcache = eEPGCache.getInstance()
 		epgcache.flushEPG()
 self.session.openWithCallback(msgClosed, EpgDeleteMsg)
-							</code>
+</code>
 						</item>
 					</menu>
 				</menu>
@@ -157,7 +200,7 @@ self.session.openWithCallback(msgClosed, EpgDeleteMsg)
 			<id val="shutdown"/>
 			<item text="Sleep timer" entryID="sleep"><screen module="SleepTimerEdit" screen="SleepTimerEdit"/></item>
 			<item text="Standby" entryID="standby"><screen module="Standby" screen="Standby"/></item>
-			<item text="Full Restart" entryID="restart"><screen module="Standby" screen="TryQuitMainloop">2</screen></item>
+			<item text="Riavvio" entryID="restart"><screen module="Standby" screen="TryQuitMainloop">2</screen></item>
 			<item weight="24" level="0" text="Switch to Android" requires="canDualBoot" entryID="dualboot"><screen module="Standby" screen="SwitchToAndroid" /></item>
 			<!--item text="Restart enigma" requires="InDebugMode" entryID="restart_enigma_debug"><screen module="Standby" screen="TryQuitMainloop">6</screen></item>
 			<item text="Restart enigma" requires="!InDebugMode" entryID="restart_enigma"><screen module="Standby" screen="TryQuitMainloop">3</screen></item-->
