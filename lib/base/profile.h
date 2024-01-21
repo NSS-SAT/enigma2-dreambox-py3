@@ -39,12 +39,14 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
 #include <algorithm>
 #include <chrono>
 
+#include <lib/base/eenv.h>
+
 class eProfile
 {
 public:
 	eProfile() : m_profileStart(clock_::now())
 	{
-		std::string fileName = "/var/local/profile";
+		std::string fileName = eEnv::resolve("${sysconfdir}/enigma2/profile");
 		std::ifstream f(fileName.c_str());
 
 		if (f.good())

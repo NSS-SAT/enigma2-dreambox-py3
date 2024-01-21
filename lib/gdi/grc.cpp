@@ -796,7 +796,6 @@ void gDC::exec(const gOpcode *o)
 		break;
 	case gOpcode::renderText:
 	{
-		const char *ellipsis = reinterpret_cast<const char *>(u8"…");
 		ePtr<eTextPara> para = new eTextPara(o->parm.renderText->area);
 		int flags = o->parm.renderText->flags;
 		int border = o->parm.renderText->border;
@@ -812,7 +811,7 @@ void gDC::exec(const gOpcode *o)
 			if (flags & gPainter::RT_WRAP) // Remove wrap
 				flags -= gPainter::RT_WRAP;
 			std::string text = o->parm.renderText->text;
-			text += ellipsis;
+			text += u8"…";
 
 			eTextPara testpara(o->parm.renderText->area);
 			testpara.setFont(m_current_font);
@@ -827,7 +826,7 @@ void gDC::exec(const gOpcode *o)
 				if ((int)text.size() > ns)
 				{
 					text.resize(ns);
-					text += ellipsis;
+					text += u8"…";
 				}
 				if (o->parm.renderText->text)
 					free(o->parm.renderText->text);

@@ -46,7 +46,7 @@ AC_SUBST(LIBGIF_LIBS)
 
 AC_ARG_WITH(crashlogemail,
 	[  --with-crashlogemail=crash log email address],
-	[CRASHLOGEMAIL="$withval"],[CRASHLOGEMAIL="the OpenPLi forum"])
+	[CRASHLOGEMAIL="$withval"],[CRASHLOGEMAIL="the Nonsolosat forum"])
 AC_SUBST(CRASHLOGEMAIL)
 AC_DEFINE_UNQUOTED(CRASH_EMAILADDR,"$CRASHLOGEMAIL",[crash log email address])
 
@@ -178,10 +178,10 @@ AM_CONDITIONAL(HAVE_GRAUTEC70X0, test "$BOXTYPE" == dm7020hd -o "$BOXTYPE" == dm
 AS_IF([test "$BOXTYPE" == "dreamone"],[AC_DEFINE(HWDREAMONE, 1,[dreamone])])
 AS_IF([test "$BOXTYPE" == "dreamtwo"],[AC_DEFINE(HWDREAMTWO, 1,[dreamtwo])])
 AS_IF([test "$BOXTYPE" == "dm8000"],[AC_DEFINE(HWDM8000, 1,[dm8000])])
-AS_IF([test "$BOXTYPE" == "dm7020hd" -o "$BOXTYPE" == "dm7020hdv2"],[AC_DEFINE(HWDM7020HD, 1,[dm7020hd])])
+AS_IF([test "$BOXTYPE" == "dm7020hd" -or "$BOXTYPE" == "dm7020hdv2"],[AC_DEFINE(HWDM7020HD, 1,[dm7020hd])])
 AS_IF([test "$BOXTYPE" == "dm7080"],[AC_DEFINE(HWDM7080, 1,[dm7080])])
 AS_IF([test "$BOXTYPE" == "dm820"],[AC_DEFINE(HWDM820, 1,[dm820])])
-AS_IF([test "$BOXTYPE" == "dm520" -o "$BOXTYPE" == "dm525"],[AC_DEFINE(HWDM520, 1,[dm520])])
+AS_IF([test "$BOXTYPE" == "dm520" -or "$BOXTYPE" == "dm525"],[AC_DEFINE(HWDM520, 1,[dm520])])
 AS_IF([test "$BOXTYPE" == "dm900"],[AC_DEFINE(HWDM900, 1,[dm900])])
 AS_IF([test "$BOXTYPE" == "dm920"],[AC_DEFINE(HWDM920, 1,[dm920])])
 AS_IF([test "$BOXTYPE" == "dm800se"],[AC_DEFINE(HWDM800SE, 1,[dm800se])])
